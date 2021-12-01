@@ -1,0 +1,17 @@
+.closed:hover{
+    cursor: not-allowed;
+}
+.closed input,
+.reserved input {
+    display: none;
+}
+.reservation tr .btn{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 100px;
+    border: 0px;
+    padding: 7px 15px;
+}
+.reservation td h3{
+    margin-bottom: 30px;
+}

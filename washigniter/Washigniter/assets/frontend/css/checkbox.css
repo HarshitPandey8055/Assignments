@@ -1,0 +1,66 @@
+/* checkbox */
+#availcalender [type="checkbox"]:checked,
+#availcalender [type="checkbox"]:not(:checked){
+    position: absolute;
+    left: -9999px;
+}
+#availcalender [type="checkbox"]:checked + label,
+#availcalender [type="checkbox"]:not(:checked) + label{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 9;
+}
+/*[type="checkbox"]:checked + label{
+    padding-left: 35px;
+}*/
+#availcalender [type="checkbox"]:checked + label:before,
+#availcalender [type="checkbox"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 100px;
+}
+#availcalender [type="checkbox"]:checked + label:before{
+    background-color: #199CDB;
+    z-index: -1;
+}
+#availcalender [type="checkbox"]:checked + label:after,
+#availcalender [type="checkbox"]:not(:checked) + label:after{
+    /*content: '\F12C';
+    font-family: "Material Design Icons";
+    color: #fff;
+    position: absolute;
+    left: 12px;
+    font-weight: bold;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;*/
+}
+#availcalender [type="checkbox"]:not(:checked) + label:after{
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+#availcalender [type="checkbox"]:checked + label:after{
+    opacity: 1;
+}
+#availcalender [type="checkbox"]:disabled + label{
+  color: #ccc;
+  cursor: no-drop;
+}
+
+/* calendar */
+#availcalender .closed.btn.d-block.btn-danger.disabled{
+    padding-left: 15px;
+}
+#availcalender .closed.btn.d-block.btn-danger.disabled:hover{
+    cursor: not-allowed;
+}
+#availcalender .closed.btn.d-block.btn-danger.disabled:before,
+#availcalender .closed.btn.d-block.btn-danger.disabled:after{
+    display: none;
+}

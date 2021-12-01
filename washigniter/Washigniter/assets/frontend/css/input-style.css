@@ -1,0 +1,77 @@
+/* hide input */
+input.radio:empty {
+	position: absolute;
+	z-index: 9;
+	opacity: 0;
+	left: -9999px;
+}
+
+/* style label */
+input.radio:empty ~ label {
+	position: relative;
+	line-height: 40px;
+	text-indent: 50px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-family: "Material Design Icons";
+	content: '';
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	background: #eee;
+	border-radius: 5px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+	content: '\F12C';
+	text-indent: initial;
+	color: #fff;
+	background-color: #28a745;
+}
+
+/* toggle on */
+input.radio:checked ~ label:before {
+	content: '\F12C';
+	text-indent: initial;
+	color: #fff;
+	background-color: #28a745;
+}
+
+input.radio:disabled ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-family: "Material Design Icons";
+	content: '\F156';
+	text-indent: initial;
+	color: #fff;
+}
+input.radio:disabled ~ label:before,
+input.radio:disabled:hover ~ label:before{
+	content: '\F156';
+	background-color: #dc3545;
+}
+input.radio:disabled ~ label,
+input.radio:disabled ~ label:before,
+input.radio:disabled:hover ~ label:before{
+	cursor: not-allowed;
+}
